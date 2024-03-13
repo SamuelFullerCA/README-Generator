@@ -40,7 +40,7 @@ inquirer
             type: 'list',
             name: 'licence',
             message: 'What is the licence your project uses?',
-            choices: ['Apache', 'GNU', 'MIT', 'BSD', 'Boost Software', 'Creative Commons Zero', 'Eclipse', 'Mozilla']
+            choices: ['Apache', 'GNU GPL v2.0', 'GNU GPL v3.0', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse', 'Mozilla']
         },
 
         {
@@ -54,15 +54,21 @@ inquirer
             name: 'tests',
             message: 'Test examples:'
         },
-    
+        
         {
             type: 'input',
-            name: 'questions',
+            name: 'github',
+            message: 'What is you github username?'
+        },
+
+        {
+            type: 'input',
+            name: 'email',
             message: 'What is your email so users can cotanct you with any questions?'
         },
     ])
     .then((data) => {
-        fs.writeFile('sampleREADME.md', generateMarkdown(data), (err) =>
+        fs.writeFile('README1.md', generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log('README generated')
   );
     });
