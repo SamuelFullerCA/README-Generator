@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require("./utils/generateMarkdown");
-// TODO: Create an array of questions for user input
+
+//prompt of questions and returns the mardown file
 inquirer
     .prompt([
 
@@ -40,7 +40,7 @@ inquirer
             type: 'list',
             name: 'licence',
             message: 'What is the licence your project uses?',
-            choices: ['Apache', 'GNU GPL v2.0', 'GNU GPL v3.0', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse', 'Mozilla']
+            choices: ['Unlicense', 'Apache', 'GNU GPL v2.0', 'GNU GPL v3.0', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'Boost Software', 'Creative Commons Zero', 'Eclipse', 'Mozilla']
         },
 
         {
@@ -68,20 +68,7 @@ inquirer
         },
     ])
     .then((data) => {
-        fs.writeFile('README1.md', generateMarkdown(data), (err) =>
+        fs.writeFile('sampleREADME.md', generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log('README generated')
   );
     });
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile('sampleREADME.md', generateMarkdown(data), (err) =>
-//     err ? console.error(err) : console.log('README generated')
-//   );
-// }
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
