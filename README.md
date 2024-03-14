@@ -21,6 +21,8 @@
 
   ## Usage
 
+  Vide demonstration of usage:  https://www.youtube.com/watch?v=SD52vVrABCc
+
    After following the installation steps the user will then be prompted a series of questions about their project/application. Once all questions are awnsered a markdownfile will be generated in the format of a professional README with the users prompt inputs.
 
    ![Picture of terminal](./readmegen.JPG)
